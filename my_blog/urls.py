@@ -18,4 +18,8 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+	url(r'^$', 'article.views.home', name='home'),
+	#url(r'^(?P<my_args>\d+)/$', 'article.views.detail', name='detail'),
+	url(r'^(?P<id>\d+)/$', 'article.views.detail', name='detail'),
+	url(r'^test/$', 'article.views.test'),
 ]
